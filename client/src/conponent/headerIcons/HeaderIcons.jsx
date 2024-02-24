@@ -19,7 +19,7 @@ const HeaderIcons = ({item, isFavorite, quantityLabels, id,isSectionFavorite}) =
         const id = item.id
         dispatch(favoriteToggleAction(id))
         // dispatch(putTodos({idItem: item.id, newCard: newItem}))
-        dispatch(updateTodo(newTodo))
+        // dispatch(updateTodo(newTodo))
     }
 
     function handlerBookmark(item) {
@@ -36,10 +36,10 @@ const HeaderIcons = ({item, isFavorite, quantityLabels, id,isSectionFavorite}) =
         dispatch(isBigCardAction(item))
     }
     function handlerToSmallCard(item){
-        const newTodo={...item,expandSizeCard:false}
+        // const newTodo={...item,expandSizeCard:false}
         dispatch(expandCardToSmallAction(item.id))
         dispatch(isBigCardAction(item))
-        dispatch(updateTodo(newTodo))
+        // dispatch(updateTodo(newTodo))
     }
 
     return (

@@ -46,12 +46,12 @@ const Palette = ({id, color,item}) => {
 
     function handlerClose() {
         setIsActive(false)
-        if(id!=='new'){
-            // console.log(item)
-            const newTodo={...item}
-            // dispatch(putTodos({idItem:item.id,newCard:item}))
-            dispatch(updateTodo(newTodo))
-        }
+        // if(id!=='new'){
+        //     // console.log(item)
+        //     const newTodo={...item}
+        //     // dispatch(putTodos({idItem:item.id,newCard:item}))
+        //     dispatch(updateTodo(newTodo))
+        // }
     }
 
     return (

@@ -8,6 +8,8 @@ import {dragAndDropAction} from "../../../reducers/getSliceReducer";
 
 const SectionAllCard = ({todos}) => {
 
+console.log(todos)
+    
     const dispatch = useDispatch()
     // ?get all card
     const toggleTiles = useSelector(state => state.tilesSlice.toggleTiles)

@@ -127,7 +127,7 @@ const newCardSliceReducer = createSlice({
             state.labels = state.labels.filter(item => item !== label)
         },
         NewCardDragAndDropAction(state,action){
-            // debugger
+            debugger
             state.labelCheckBox=action.payload
         }
 

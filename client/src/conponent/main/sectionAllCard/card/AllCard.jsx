@@ -11,7 +11,7 @@ import List from "../../newCard/list/List";
 import {bookmarkAddAction, bookmarkRemoveAction, dragAndDropAction} from "../../../../reducers/getSliceReducer";
 import {removeLabelAction} from "../../labelChangePopup/labelChangePopupSliceReducer";
 import {updateTodo} from "../../../../actions/user";
-
+import {changeTextarea} from '../../../../reducers/getSliceReducer'
 
 const AllCard = ({item,isSectionFavorite=[]}) => {
 
@@ -35,22 +35,24 @@ const AllCard = ({item,isSectionFavorite=[]}) => {
 
     function handlerChangeTextTextarea(e) {
         setItemTextarea(e.target.value)
-        const newTodo = {
-            ...item,
-            textareaCheckBox: e.target.value
-        }
-        // console.log(newCard)
+        console.log("this item id"+item.id)
+        dispatch(changeTextarea({id:item.id,text:e.target.value}))
+        // const newTodo = {
+        //     ...item,
+        //     textareaCheckBox: e.target.value
+        // }
+        // // console.log(newCard)
 
-        if (writeTimeout !== false) {
-            clearTimeout(writeTimeout)
-        }
-        setWriteTimeout(
-            setTimeout((value) => {
-                // dispatch(putTodos({idItem: item.id, newCard: newCard}))
-                dispatch(updateTodo(newTodo))
-                console.log("putTodos textarea")
-            }, 1000, e.target.value)
-        )
+        // if (writeTimeout !== false) {
+        //     clearTimeout(writeTimeout)
+        // }
+        // setWriteTimeout(
+        //     setTimeout((value) => {
+        //         // dispatch(putTodos({idItem: item.id, newCard: newCard}))
+        //         dispatch(updateTodo(newTodo))
+        //         console.log("putTodos textarea")
+        //     }, 1000, e.target.value)
+        // )
     }
 
 
@@ -59,24 +61,24 @@ const AllCard = ({item,isSectionFavorite=[]}) => {
 
     function handlerChangeName(e) {
         setNameCard(e.target.value)
-        const newTodo = {
-            ...item,
-            title: e.target.value
-        }
+        // const newTodo = {
+        //     ...item,
+        //     title: e.target.value
+        // }
 
-        if (writeTimeout !== false) {
-            clearTimeout(writeTimeout)
-        }
+        // if (writeTimeout !== false) {
+        //     clearTimeout(writeTimeout)
+        // }
 
-        setWriteTimeout(
-            setTimeout((value) => {
+        // setWriteTimeout(
+        //     setTimeout((value) => {
 
-                // dispatch(putTodos({idItem: item.id, newCard: newCard}))
-                dispatch(updateTodo(newTodo))
-                // console.log("setWriteTimeout changeName card")
-                // console.log(newCard)
-            }, 1000, e.target.value)
-        )
+        //         // dispatch(putTodos({idItem: item.id, newCard: newCard}))
+        //         dispatch(updateTodo(newTodo))
+        //         // console.log("setWriteTimeout changeName card")
+        //         // console.log(newCard)
+        //     }, 1000, e.target.value)
+        // )
 
     }
 
@@ -86,9 +88,10 @@ const AllCard = ({item,isSectionFavorite=[]}) => {
     function handlerRemoveLabel(itemLabel) {
         const newTodo = { ...item,label: item.label.filter(i => i !== itemLabel) };
 
-
+            console.log(itemLabel)
         // dispatch(putTodos({idItem:item.id, newCard: newCard}))
-        dispatch(updateTodo(newTodo))
+        // dispatch(updateTodo(newTodo))
+        dispatch(bookmarkRemoveAction({id:item.id,label:itemLabel}))
     }
 
     return (

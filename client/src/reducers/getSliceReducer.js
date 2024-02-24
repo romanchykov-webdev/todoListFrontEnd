@@ -1,13 +1,32 @@
-import {createSlice} from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 
 const getSliceReducer = createSlice({
     name: 'get',
     initialState: {
-        colorsPalette:[],
+        colorsPalette: [
+            "#fff",
+            "#faafa8",
+            "#f39f76",
+            "#fff8b8",
+            "#e2f6d3",
+            "#b4ddd3",
+            "#efeff1",
+            "#aeccdc",
+            "#d3bfdb",
+            "#f6e2dd",
+            "#e9e3d4",
+            "#e9e3d5"],
         getTodos: []
     },
     reducers: {
+        addTodo(state, action) {
+            state.getTodos = [...state.getTodos, action.payload];
+        },
+        removeTodo(state, action) {
+            // debugger
+            state.getTodos = state.getTodos.filter(item => item.id !== action.payload)
+        },
         getTodosAction(state, action) {
             const todos = action.payload
             // debugger
@@ -18,11 +37,11 @@ const getSliceReducer = createSlice({
             // debugger
             state.colorsPalette = colors
         },
-        changeColorBackgroundAction(state,action){
-          const {id, color}=action.payload
-            state.getTodos=state.getTodos.map(item=>{
-                if(item.id===id){
-                    item.color=color
+        changeColorBackgroundAction(state, action) {
+            const { id, color } = action.payload
+            state.getTodos = state.getTodos.map(item => {
+                if (item.id === id) {
+                    item.color = color
                 }
                 return item
             })
@@ -40,7 +59,7 @@ const getSliceReducer = createSlice({
 
         },
         bookmarkAddAction(state, action) {
-            const {id, label} = action.payload
+            const { id, label } = action.payload
             // debugger
             state.getTodos = state.getTodos.map(item => {
                 if (item.id === id) {
@@ -63,36 +82,86 @@ const getSliceReducer = createSlice({
                 return item; // Return the updated item
             });
         },
-        expandCardToBigAction(state,action){
-            const id=action.payload
+        expandCardToBigAction(state, action) {
+            const id = action.payload
             // debugger
-            state.getTodos=state.getTodos.map(item=>{
-                if(item.id===id){
-                    return {...item,expandSizeCard: true}
+            state.getTodos = state.getTodos.map(item => {
+                if (item.id === id) {
+                    return { ...item, expandSizeCard: true }
                 }
                 return item
             })
         },
-        expandCardToSmallAction(state,action){
-            const id=action.payload
+        expandCardToSmallAction(state, action) {
+            const id = action.payload
             // debugger
-            state.getTodos=state.getTodos.map(item=>{
-                if(item.id===id){
-                    return {...item,expandSizeCard: false}
+            state.getTodos = state.getTodos.map(item => {
+                if (item.id === id) {
+                    return { ...item, expandSizeCard: false }
                 }
                 return item
             })
+        },
+        changeTextarea(state, action) {
+            const { id, text } = action.payload
+            // debugger
+            state.getTodos = state.getTodos.map(item => {
+                if (item.id === id) {
+                    return { ...item, textareaCheckBox: text }
+                }
+                return item
+            }
+            )
+        },
+        dragAndDrop(state, action) {
+            const item = action.payload
+            // debugger
+            state.getTodos = state.getTodos.map(i => {
+                if (i.id === item.id) {
+                    return { ...item, labelCheckBox: item.labelCheckBox }
+                }
+                return i
+            })
+        },
+        removeCheckBox(state, action) {
+            const { idCart, idItem } = action.payload
+            // debugger
+            state.getTodos = state.getTodos.map(item => {
+                if (item.id === idCart) {
+                    return {
+                        ...item,
+                        labelCheckBox: item.labelCheckBox.filter(i => i.id !== idItem)
+                    }
+                }
+                return item
+            }
+            )
+        },
+        addCheckBox(state, action) {
+            const { idCart, item } = action.payload
+            // debugger
+            state.getTodos = state.getTodos.map(i => {
+                if (i.id === idCart) {
+                    return {
+                        ...i,
+                        labelCheckBox: [ ...i.labelCheckBox, item ]
+                    }
+                }
+                return i
+            })
+
         }
-
-
-
-
-
     }
 })
 
 export default getSliceReducer.reducer
 export const {
+    addTodo,
+    removeTodo,
+    changeTextarea,
+    dragAndDrop,
+    removeCheckBox,
+    addCheckBox,
     getTodosAction,
     getColorsPaletteAction,
     changeColorBackgroundAction,

@@ -61,7 +61,7 @@ const LabelChangePopup = () => {
             dispatch(labelsRemoveAction(item))
         } else {
             dispatch(bookmarkRemoveAction({id: idItem, label: item}))
-            dispatch(removeLabelAction(item))
+            // dispatch(removeLabelAction(item))
         }
     }
 
@@ -86,7 +86,7 @@ const LabelChangePopup = () => {
 
 
             // dispatch(putTodos({idItem, newCard}))
-            dispatch(updateTodo(newTodo))
+            // dispatch(updateTodo(newTodo))
         }
         dispatch(labelTogglePopupAction(idItem))
 

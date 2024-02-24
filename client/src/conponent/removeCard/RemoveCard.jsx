@@ -3,16 +3,17 @@ import s from './RemoveCard.module.scss'
 import {useDispatch} from "react-redux";
 // import {removeCard} from "../../actions/todos";
 import {deleteTodo, updateTodo} from "../../actions/user";
-
+import {removeTodo} from "../../reducers/getSliceReducer"
 
 const RemoveCard = ({id}) => {
 
     const dispatch=useDispatch()
 
     const handlerRemoveCard= (id)=> {
-        // console.log(id)
+        console.log(id)
         // dispatch(removeCard(id))
-        dispatch(deleteTodo(id))
+        // dispatch(deleteTodo(id))
+        dispatch(removeTodo(id))
     }
 
     return (

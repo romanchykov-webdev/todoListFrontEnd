@@ -7,7 +7,7 @@ import {listTempPushAction, NewCardDragAndDropAction} from "../newCardSliceReduc
 // import {putTodos} from "../../../../actions/todos";
 import dragAndDropAction from "../../../../actions/dargAndDrop";
 import {updateTodo} from "../../../../actions/user";
-
+import {dragAndDrop,addCheckBox} from "../../../../reducers/getSliceReducer"
 
 const List = ({itemTodo=[], isSectionFavorite=[]}) => {
 
@@ -56,13 +56,15 @@ if(Object.keys(itemTodo).length > 0){
                     // console.log("itemTodo.id"+itemTodo.id)
                     // console.log(itemTodo.labelCheckBox)
 
-                    const newTodo= {
-                        ...itemTodo,
-                        labelCheckBox: [...itemTodo.labelCheckBox, newItem]
-                    }
-                    // console.log(newTodo)
-                    // dispatch(putTodos({idItem:itemTodo.id,newCard:newCard}))
-                    dispatch(updateTodo(newTodo))
+                    // const newTodo= {
+                    //     ...itemTodo,
+                    //     labelCheckBox: [...itemTodo.labelCheckBox, newItem]
+                    // }
+                    // // console.log(newTodo)
+                    // // dispatch(putTodos({idItem:itemTodo.id,newCard:newCard}))
+                    // dispatch(updateTodo(newTodo))
+                    console.log(itemTodo)
+                    dispatch(addCheckBox({idCart:itemTodo.id,item:newItem}))
                 }else{
                     dispatch(listTempPushAction({newItem}))
                 }
@@ -119,8 +121,10 @@ const [dragStartItem,setDragStartItem]=useState(null)
 
         // dispatch(putTodos({idItem:newCard.id, newCard:newCard}))
       if(!isNewCard){
-          // console.log('dispatch(updateTodo(newTodo))');
-          dispatch(updateTodo(newTodo))
+        //   console.log('dispatch(updateTodo(newTodo))');
+          console.log(newTodo);
+          //   dispatch(updateTodo(newTodo))
+            dispatch(dragAndDrop(newTodo))
       }else {
           dispatch(NewCardDragAndDropAction(newTodo.labelCheckBox))
       }
@@ -137,7 +141,7 @@ const [dragStartItem,setDragStartItem]=useState(null)
 
 
     return (
-        <div className={s.wrapperList}>
+        <div className={s.wrapperList} draggable="false">
             {
                 // noCompleted.length>0 && <ListCompleted mockArray={noCompleted}/>
                 noCompleted.length > 0 && noCompleted.map(item =>
@@ -149,13 +153,14 @@ const [dragStartItem,setDragStartItem]=useState(null)
                             item={item}
                             itemTodo={itemTodo}
                             isSectionFavorite={isSectionFavorite}
+                            
                         />
                     )
                 )
             }
 
 
-            <div className={s.createNew}>
+            <div className={s.createNew} draggable="false">
 
                 <span
                     onClick={newItemHandler}
@@ -174,13 +179,14 @@ const [dragStartItem,setDragStartItem]=useState(null)
                                             {completed.length} checked items
                                         </div>
             }
+            
             {
 
 
                 // completed.length>0 && <ListCompleted mockArray={completed} num={completed.length}/>
                 completed.length > 0 && completed.map(item =>
                     (
-                        <ListCompleted key={item.id} item={item} itemTodo={itemTodo}/>
+                        <ListCompleted key={item.id} item={item} itemTodo={itemTodo} drop={false}/>
                     )
                 )
             }

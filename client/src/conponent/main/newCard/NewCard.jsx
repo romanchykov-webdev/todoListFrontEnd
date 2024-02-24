@@ -11,11 +11,10 @@ import Textarea from "./textarea/Textarea";
 import List from "./list/List";
 import {v4} from "uuid";
 
-// import {postTodos} from "../../../actions/todos";
 import {labelTogglePopupAction} from "../labelChangePopup/labelChangePopupSliceReducer";
 import Palette from "../../palitra/Palette";
+import {addTodo} from "../../../reducers/getSliceReducer"
 
-import {addTodo} from "../../../actions/user";
 
 
 
@@ -63,13 +62,14 @@ const NewCard = () => {
             "isFavorite": isFavorite,
             "labelCheckBox": listTemp,
             "textareaCheckBox": textareaTemp,
-            "dateCreate": new Date(),
+            "dateCreate": new Date().toLocaleString(),
             "expandSizeCard":false
         }
         // console.log(newCard)
 
 
-        dispatch(addTodo({...newCard}))
+        // dispatch(addTodo({...newCard}))
+        dispatch(addTodo(newCard))
 
 
 
