@@ -1,0 +1,53 @@
+@import "../../../../util/colors";
+
+.wrapperToggle {
+  cursor: pointer;
+  padding: 5px;
+  margin-right: 20px;
+  position: relative;
+  //outline: 1px solid red;
+  &:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scale(0);
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background-color: rgba($colorGray, 0.4);
+    transition: 0.5s ease-in-out;
+  }
+  &:hover{
+    &:before{
+      transform: scale(1);
+    }
+  }
+  .wrapperTiles, .wrapperList {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 48px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+
+    span {
+      height: calc(50% - 2px);
+      border: 4px solid $colorGray;
+    }
+  }
+
+  .wrapperTiles {
+    span {
+      width: calc(50% - 2px);
+
+    }
+  }
+  .wrapperList{
+    span{
+      width: 100%;
+    }
+  }
+}

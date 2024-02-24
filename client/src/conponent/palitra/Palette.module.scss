@@ -1,0 +1,107 @@
+@import "../../../util/colors";
+
+.wrapperPalette {
+  margin-left: 10px;
+  margin-right: 20px;
+
+  .iconColorPalette {
+    cursor: pointer;
+    //outline: 1px solid red;
+  }
+}
+.backgroundPopup{
+  position: fixed;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100lvh;
+  background-color: rgb($colorGray,0.4);
+  z-index: 1;
+}
+.palettePopup {
+  cursor: auto;
+  padding: 20px;
+  width: 320px;
+  height: auto;
+  background-color: #fff;
+  z-index: 5;
+  border-radius: 12px;
+  box-shadow: 5px 5px 20px rgba($colorGray, 1);
+  position: fixed;
+  top: 50%;
+  left: calc(50% - 160px);
+  transform: translatey(-50%);
+
+  .closetButton {
+    padding: 10px;
+
+    .btnColorPalette {
+      margin-left: auto;
+    }
+  }
+
+  .blockColors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .colorItem {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: 0.5s;
+      border: 1px solid rgba($colorGray, 0.5);
+
+      &:hover {
+        box-shadow: 1px 1px 10px 5px rgba($colorGray, 0.9);
+        border: 1px solid rgba($colorGray, 0.9);
+      }
+
+      &.active {
+        box-shadow: 1px 1px 10px 5px rgba($colorGray, 0.9);
+        border: 1px solid rgba($colorGray, 0.9);
+      }
+    }
+  }
+
+  .blockAddColor {
+    border-top: 1px solid rgba($colorGray, 0.5);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+
+    label {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 1px solid rgba($colorGray, 0.5);
+      transition: 0.5s;
+
+      &:hover {
+        box-shadow: 1px 1px 10px 5px rgba($colorGray, 0.9);
+        border: 1px solid rgba($colorGray, 0.9);
+      }
+    }
+
+    input {
+      visibility: hidden;
+      width: 0;
+      height: 0;
+    }
+  }
+}
+
+.btnColorPalette {
+  border-radius: 12px;
+  border: 1px solid transparent;
+  transition: 0.5s;
+  border-bottom: 1px solid rgba($colorGray, 0.4);
+
+  &:hover {
+    border: 1px solid rgba($colorGray, 0.4);
+  }
+}

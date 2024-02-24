@@ -1,0 +1,143 @@
+@import "../../../util/colors";
+
+.wrapperAuthReg {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 70px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  .wrapperForm {
+    border: 1px solid $colorGray;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 1px 1px 5px $colorGray;
+
+    h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .form {
+      label {
+        position: relative;
+        margin-bottom: 40px;
+        display: flex;
+        align-items: center;
+
+        .spanPlaceholder {
+          top: 50%;
+          left: 10px;
+          transform: translateY(-50%);
+          position: absolute;
+          transition: 0.5s ease-in-out;
+          font-size: 2em;
+          font-weight: 700;
+        }
+
+        input {
+          //outline: 1px solid red;
+          font-size: 2em;
+          padding: 5px;
+          width: calc(100% - 34px);
+          border-bottom: 1px solid $colorGray;
+        }
+
+        .spanPlaceholder.active {
+          font-weight: 400;
+          font-size: 1em;
+          top: -15px;
+        }
+
+        &:focus-within {
+          .spanPlaceholder{
+            font-weight: 400;
+            font-size: 1em;
+            top:-15px;
+          }
+
+        }
+
+        .eyeIcon {
+          cursor: pointer;
+          margin-left: 10px;
+        }
+
+        &:nth-child(2) {
+          margin-bottom: 20px;
+        }
+
+      }
+
+      label.email {
+
+      }
+
+      label.password {
+        display: flex;
+
+        .eyeIcon {
+          //outline: 1px solid red;
+          width: 24px;
+          height: 24px;
+          display: block;
+          position: relative;
+
+          svg {
+            width: 24px;
+            height: 24px;
+          }
+
+          .onOf {
+            top: calc(50% - 2px);
+            left: -3px;
+            transform: rotate(-45deg);
+            width: 30px;
+            height: 4px;
+            border-radius: 12px;
+            background-color: black;
+            position: absolute;
+          }
+        }
+      }
+
+      .wrapperBtn {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        .btnAuthReg {
+          //outline: 1px solid red;
+          padding: 10px 20px;
+          border-radius: 12px;
+          box-shadow: 1px 1px 5px $colorGray;
+          font-size: 1.2em;
+
+          &:hover {
+            box-shadow: inset 1px 1px 5px $colorGray;
+          }
+        }
+      }
+
+
+    }
+  }
+}
+.page404{
+  position: relative;
+  img{
+    width: 100%;
+    height: 100lvh;
+    object-fit: contain;
+  }
+  button{
+    position: absolute;
+    top: 20px;
+    left: 0;
+    font-size: 2em;
+    padding: 20px 30px;
+    border:1px solid black;
+  }
+}

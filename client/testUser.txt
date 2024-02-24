@@ -1,0 +1,49 @@
+name : todoListApi
+apiKey: CunBSUg2oSEvJtFsELhdLqTsBgvgMcBBpP1yGQhPoXVVWaoTf7Qo1rbCmbmieWR8
+
+
+curl --location --request POST 'https://eu-central-1.aws.data.mongodb-api.com/app/data-tclyv/endpoint/data/v1/action/findOne' \
+--header 'Content-Type: application/json' \
+--header 'Access-Control-Request-Headers: *' \
+--header 'api-key: CunBSUg2oSEvJtFsELhdLqTsBgvgMcBBpP1yGQhPoXVVWaoTf7Qo1rbCmbmieWR8' \
+--header 'Accept: application/ejson' \
+--data-raw '{
+    "collection":"users",
+    "database":"todoListB",
+    "dataSource":"Cluster0",
+    "projection": {"_id": 1}
+}'
+
+
+
+
+
+
+
+
+{"email":"1@c.com",
+"password":"$2b$08$RCcgmlE/dbLzz3QuqvdiOeAV6rrtMxicQBXdRDf7Wi.IsRsfgwkAK",
+"avatar":"1-c-com-c26e157f-f67f-48a8-911a-43242899d2f3.jpg",
+"colorsPalette":["#fff","#faafa8","#f39f76","#fff8b8",
+"#e2f6d3","#b4ddd3","#efeff1","#aeccdc","#d3bfdb","#f6e2dd","#e9e3d4","#e9e3d5"],
+"todos":[
+{
+"id":"9b6f4305-21b2-4c87-bcdd-195b4730b647",
+"label":["all","ghghhg"],
+"title":"342424",
+"color":"#f6e2dd",
+"panelChangeBGColor":false,
+"isFavorite":true,
+"labelCheckBox":[],
+"textareaCheckBox":"hjfjfjfnfnf",
+"dateCreate":"2024-02-04T13:44:40.097Z",
+"expandSizeCard":false
+},
+{
+"id":"56756aaa-0f5e-4693-b374-4513eec29a6b",
+"label":["all"],
+"title":"new card","color":"#fff",
+"panelChangeBGColor":false,
+"isFavorite":false,
+"labelCheckBox":[
+{"id":"b5d1202d-793f-49be-bf73-365f4531feba","title":"555555555","completed":true},{"id":"b86ebaca-ed76-457f-abee-f17cfd224f85","title":"2222222","completed":false},{"id":"ed0079fb-f9aa-48d0-98ef-926ea5f8c155","title":"111111","completed":true},{"id":"ceef9f5f-f1fa-4cf1-b799-f00ea1e5ab40","title":"333333333","completed":true},{"id":"d0790dd4-4cab-49d2-9f20-307854eb7b4f","title":"44444444","completed":true}],"textareaCheckBox":[],"dateCreate":"2024-02-04T13:45:41.231Z","expandSizeCard":false}],"__v":{"$numberInt":"2"}}

@@ -1,0 +1,103 @@
+@import "../../../../util/colors";
+
+
+.wrapperNewCard {
+  position: absolute;
+  top: -180px;
+  left: 0;
+  z-index: 1;
+  //height: 200px;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 1em;
+  font-weight: 400;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //outline: 1px solid red;
+
+  .wrapper {
+    //width: 480px;
+//position: relative;
+    width: 80%;
+    padding: 12px 16px 12px 16px;
+    border-radius: 12px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, .5);
+    //display: flex;
+    //justify-content: space-between;
+    //align-items: center;
+    .wrapperHeader{
+      display: flex;
+      font-family: "Google Sans",Roboto,Arial,sans-serif;
+      color: rgba($colorBlack,0.5);
+      width: 100%;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      input{
+        font-size: 2em;
+        width: 100%;
+        padding: 3px;
+        color:rgba($colorGray,0.6);
+        border-bottom: 1px solid rgba($colorGray, 0.4)
+
+      }
+      .wrapperIcons{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .bookmark{
+          cursor: pointer;
+        }
+        .favorites{
+          cursor: pointer;
+          //svg{
+          //  fill:gold;
+          //}
+        }
+        .palette{
+          svg{
+            width: 40px;
+            height: 40px;
+          }
+
+          div{
+            margin-right: 0;
+          }
+        }
+
+      }
+
+    }
+    .wrapperMain{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      //height: 400px;
+      height: auto;
+
+
+      .icon {
+        cursor: pointer;
+        margin-left: 20px;
+      }
+    }
+    .wrapperBottom{
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      button{
+        padding: 5px;
+        span{
+          transition: 0.5s ease;
+          &:hover{
+            text-shadow: 1px 1px 1px $colorGray;
+          }
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,36 @@
+@media screen and (max-width: 992px) {
+  .allCard {
+
+    .wrapperTiles {
+      .wrapperCardBig {
+        flex-basis: calc(33% - 20px);
+        max-height: 400px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .allCard {
+
+    .wrapperTiles {
+      .wrapperCardBig {
+        flex-basis: calc(50% - 20px);
+        max-height: 400px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .allCard {
+
+    .wrapperTiles {
+      .wrapperCardBig {
+        flex-basis: 100%;
+        max-height: 400px;
+      }
+    }
+  }
+}
+

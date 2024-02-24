@@ -1,0 +1,48 @@
+@import "../../../util/colors";
+
+.wrapperProfile{
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  .blockAvatar{
+
+    .nikName{
+      margin-bottom: 20px;
+      span{
+        font-size: 2em;
+      }
+    }
+    .avatar{
+      border:1px solid $colorGray;
+      border-radius: 50%;
+      width: 360px;
+      height: 360px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+      img{
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .blockButtons{
+      display: flex;
+      justify-content: space-between;
+      button{
+        padding: 5px 10px;
+        border:1px solid $colorGray;
+        font-size: 1.4em;
+
+      }
+
+    }
+
+  }
+}
+.home{
+  margin-top: 20px;
+  padding: 5px 10px;
+  border:1px solid $colorGray;
+}

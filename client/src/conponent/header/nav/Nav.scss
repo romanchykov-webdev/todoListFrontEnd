@@ -1,0 +1,72 @@
+@import "../../../../util/colors";
+
+.nav{
+  position: fixed;
+  z-index: 3;
+  background-color: $colorGray;
+  top: 70px;
+  left: 0;
+  //outline: 1px solid red;
+  //width: 40px;
+  border-radius: 0 12px 12px 0;
+  height: auto;
+  padding: 15px;
+
+
+  ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    li{
+      text-align: center;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      margin-bottom: 5px;
+      margin-top: 5px;
+      font-size: 30px;
+      cursor: pointer;
+      color: rgba($colorBlack, 0.8);
+      transition: 0.5s ;
+      scale: 0.95;
+      &:hover{
+        scale: 1;
+        color: rgba($colorBlack, 1);
+      }
+    }
+    button{
+      text-align: center;
+      //padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.5s;
+      font-size: 2em;
+      color:$colorWhite;
+      border-radius: 12px;
+      border: 1px solid white;
+      &:hover{
+        box-shadow: inset 0 0 3px white;
+        border: 1px solid black;
+      }
+
+    }
+  }
+
+}
+.nav-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+.nav-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.nav-exit {
+  opacity: 1;
+}
+.nav-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+}

@@ -1,0 +1,9 @@
+@import "../../../../util/colors";
+
+.allCard{
+  //background-color: $colorActive;
+  border: 1px solid rgba($colorGray, 0.5);
+  border-radius: 12px;
+}
+
+@import "./sectionAllCardMedia";

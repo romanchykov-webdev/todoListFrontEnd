@@ -1,0 +1,66 @@
+@import "../../../../../../util/colors";
+
+
+
+.wrapperList{
+
+  .wrapperItem{
+    //width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    &:focus-within{
+      border-top:1px solid black;
+      border-bottom:1px solid black;
+    }
+    &:hover{
+      .iconDrag{
+        opacity: 1;
+
+      }
+    }
+    .iconDrag{
+      width: 30px;
+      height: 30px;
+      cursor: move;
+      transition: 0.5s ease-in-out;
+      opacity: 0;
+      svg{
+
+      }
+    }
+    .iconCompleted{
+      width: 30px;
+      height: 30px;
+      .iCompleted{
+        width: 100%;
+        height: 100%;
+      }
+      .iNonCompleted{
+        width: 100%;
+        height: 100%;
+      }
+    }
+    input{
+      width: 100%;
+      height: 100%;
+      //outline : 1px solid red;
+      font-size: 2em;
+      &.itemCompleted{
+        color: rgba($colorGray,0.6);
+        text-decoration: line-through;
+      }
+    }
+    .btnClose{
+      opacity: 0.5;
+      transition: 0.5s ease-in-out;
+      &:hover{
+        opacity: 1;
+      }
+    }
+  }
+}

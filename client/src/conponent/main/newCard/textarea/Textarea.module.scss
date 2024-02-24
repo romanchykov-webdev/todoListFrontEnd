@@ -1,0 +1,11 @@
+.textarea {
+  font-size: 2em;
+  padding: 3px;
+  width: 100%;
+  resize: none;
+  //outline: 1px solid red;
+  //field-size
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}

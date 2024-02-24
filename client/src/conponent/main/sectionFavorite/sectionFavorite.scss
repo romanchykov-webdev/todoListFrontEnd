@@ -1,0 +1,79 @@
+@import "../../../../util/colors";
+
+
+.favorite{
+  background-color: rgba($colorGray,0.05);
+  margin-bottom: 20px;
+  padding: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  //padding: 0;
+
+
+  .toggleIsVisibleFavorite{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    //margin-bottom: 20px;
+    h6{
+      font-size: 4em;
+      margin-left: 20px;
+    }
+    button{
+      margin-right: 20px;
+      border:1px solid $colorGray;
+      width: 40px;
+      height: 40px;
+      display: block;
+      border-radius: 50%;
+      padding: 5px;
+      transition: 0.5s;
+      svg{
+        width: 100%;
+        height: 100%;
+      }
+      &.isActive{
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .wrapperTiles{
+    transition: 1s;
+    .wrapperCardBig{
+      flex-basis: calc(20% - 20px);
+      height: 200px;
+
+    }
+  }
+  .wrapperList{
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .wrapperCardBig{
+      max-height: 100px;
+      height: 200px;
+    }
+  }
+}
+.showFavorite-enter {
+  opacity: 0;
+  height: 0;
+  transform: scale(0.9);
+}
+.showFavorite-enter-active {
+  opacity: 1;
+  height: auto;
+  transform: translateX(0);
+  transition: opacity 300ms, height 3000ms, transform 300ms;
+}
+.showFavorite-exit {
+  opacity: 1;
+  height: auto;
+}
+.showFavorite-exit-active {
+  opacity: 0;
+  height: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, height 3000ms, transform 300ms;
+}
+@import "./sectionFavoriteMedia";

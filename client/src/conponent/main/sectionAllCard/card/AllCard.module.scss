@@ -1,0 +1,180 @@
+@import "../../../../../util/colors";
+
+.wrapperCard {
+  cursor: pointer;
+  //width: calc(33% - 20px);
+  flex: 0 0 calc(33% - 20px);
+  //flex: 0 0 calc(50% - 20px);
+  //width: 100%;
+  height: 300px;
+  //height: 500px;
+  padding: 10px;
+  border-radius: 12px;
+  overflow: hidden;
+  //border:1px solid black;
+  background-color: $colorWhite;
+  transition: 0.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 1px 1px 1px 3px rgb($colorGray, 0.1);
+
+  &:hover {
+    //box-shadow: 1px 1px 3px rgba($colorGray, 0.5);
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302), 0 1px 3px 1px rgba(60, 64, 67, 0.149);
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    //height: 24px;
+
+    .headerTitle {
+      width: 50%;
+      input {
+        font-size: 1.2rem;
+        width: 100%;
+        background-color: transparent;
+        border-bottom: 1px solid rgba($colorGray, 0.2);
+      }
+    }
+
+
+  }
+
+  .blockArticle {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 6px;
+    outline: 1px solid rgba($colorGray, 0.2);
+    margin-bottom: 5px;
+    margin-top: 5px;
+    position: relative;
+    //font-size: 0.4em;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      width: 12px;
+    }
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+      border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+    }
+    //outline: 1px solid black;
+    textarea {
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      resize: none;
+      overflow-y: scroll;
+      font-size: 2em;
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+
+    }
+
+  }
+
+  .footerCard {
+
+    .blockIcons {
+      display: flex;
+
+      div {
+        transition: 0.5s;
+        border-radius: 12px;
+
+        //&:hover {
+        //  background-color: rgba($colorWhite, 0.9);
+        //}
+      }
+    }
+
+    .blockLabel {
+      display: flex;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      width: 100%;
+      cursor: auto;
+
+      &::-webkit-scrollbar {
+        //display: none;
+        //width: 12px;
+        height: 12px;
+      }
+
+      &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+
+      }
+
+      ::-webkit-scrollbar-thumb {
+
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+      }
+
+      .labelCard {
+        margin-left: 5px;
+        margin-right: 5px;
+        padding: 2px 5px;
+        border: 1px solid $colorGray;
+        border-radius: 12px;
+        position: relative;
+        transition: 0.5s;
+        &:hover{
+          color: rgba($colorBlack,0.2);
+          .removeLabel{
+            visibility: visible;
+            width: 100%;
+            height: 25px;
+          }
+        }
+        .removeLabel{
+          visibility: hidden;
+          position: absolute;
+          border-radius: 12px;
+          width: 100%;
+          height: 100%;
+          //outline: 1px solid red;
+          background-color: rgba($colorGray,0.5);
+          top: 0;
+          left: 0;
+          z-index: 3;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          span{
+            position: absolute;
+            top: calc(50% - 2px);
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: red;
+            &:first-child{
+              transform: rotate(45deg);
+            }
+            &:last-child{
+              transform: rotate(-45deg);
+            }
+          }
+
+        }
+      }
+    }
+  }
+
+  .blockHidden {
+    display: none;
+  }
+}
+
+
